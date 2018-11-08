@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises:DFA
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:exercises="http://www.example.org/exercises">
+  <states id="1"
+      incoming="//@transition.0"/>
+  <transition
+      input="input1"/>
+</exercises:DFA>

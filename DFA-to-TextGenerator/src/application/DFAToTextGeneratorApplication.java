@@ -12,6 +12,7 @@ public class DFAToTextGeneratorApplication implements IApplication{
 		System.out.println("DFAToTextGeneratorApplication.start()");
 		System.out.println("Hello World!");
 		return null;
+		
 	}
 
 	@Override

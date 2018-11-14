@@ -2,8 +2,9 @@
 <exercises:DFA
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:exercises="http://www.example.org/exercises">
-  <states name="dfa1dfa2"
+    xmlns:exercises="http://www.example.org/exercises"
+    name="dfa1dfa2dfa2">
+  <states name="dfa1dfa2dfa2"
       id="A"
       isEnd="true"
       incoming="//@transition.0"/>

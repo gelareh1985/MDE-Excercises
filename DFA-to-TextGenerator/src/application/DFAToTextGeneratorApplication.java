@@ -19,7 +19,7 @@ public class DFAToTextGeneratorApplication implements IApplication{
 
 //	private static Vector<State> states=new Vector<State>();
 //	private static Vector<Transition> transitions = new Vector<Transition>();
-	private String pathName1="/home/pi/gmeidanipour/git/MDE-Excercises/Exercises/dynamicInstances/DFA.xmi";
+	private String pathName1="/home/pi/gmeidanipour/git/MDE-Excercises/Exercises/dynamicInstances/DFA1.xmi";
 	private String pathName2="/home/pi/gmeidanipour/git/MDE-Excercises/Exercises/dynamicInstances/exampleUML.uml";
 	private Resource modelResource1,modelResource2;
 

@@ -82,6 +82,11 @@ public class ExercisesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseNamableElement(NamableElement object) {
+			return createNamableElementAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -139,6 +144,20 @@ public class ExercisesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTransitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link exercises.NamableElement <em>Namable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see exercises.NamableElement
+	 * @generated
+	 */
+	public Adapter createNamableElementAdapter() {
 		return null;
 	}
 

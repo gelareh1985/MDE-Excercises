@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises:DFA
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:exercises="http://www.example.org/exercises"
+    xsi:schemaLocation="http://www.example.org/exercises ../model/exercises.ecore">
+  <states name="dfa2"
+      id="C"/>
+  <states name="dfa3"
+      id="D"/>
+  <transition
+      input="HelloWorld!"/>
+</exercises:DFA>

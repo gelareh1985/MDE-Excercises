@@ -4,6 +4,7 @@ package exercises.impl;
 
 import exercises.ExercisesFactory;
 import exercises.ExercisesPackage;
+import exercises.NamableElement;
 import exercises.State;
 import exercises.Transition;
 
@@ -41,6 +42,13 @@ public class ExercisesPackageImpl extends EPackageImpl implements ExercisesPacka
 	 * @generated
 	 */
 	private EClass transitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namableElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -210,6 +218,24 @@ public class ExercisesPackageImpl extends EPackageImpl implements ExercisesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNamableElement() {
+		return namableElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamableElement_Name() {
+		return (EAttribute) namableElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExercisesFactory getExercisesFactory() {
 		return (ExercisesFactory) getEFactoryInstance();
 	}
@@ -247,6 +273,9 @@ public class ExercisesPackageImpl extends EPackageImpl implements ExercisesPacka
 
 		transitionEClass = createEClass(TRANSITION);
 		createEAttribute(transitionEClass, TRANSITION__INPUT);
+
+		namableElementEClass = createEClass(NAMABLE_ELEMENT);
+		createEAttribute(namableElementEClass, NAMABLE_ELEMENT__NAME);
 	}
 
 	/**
@@ -278,6 +307,9 @@ public class ExercisesPackageImpl extends EPackageImpl implements ExercisesPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		dfaEClass.getESuperTypes().add(this.getNamableElement());
+		stateEClass.getESuperTypes().add(this.getNamableElement());
+		transitionEClass.getESuperTypes().add(this.getNamableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dfaEClass, exercises.DFA.class, "DFA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -305,6 +337,11 @@ public class ExercisesPackageImpl extends EPackageImpl implements ExercisesPacka
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTransition_Input(), ecorePackage.getEString(), "input", null, 0, 1, Transition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(namableElementEClass, NamableElement.class, "NamableElement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamableElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamableElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

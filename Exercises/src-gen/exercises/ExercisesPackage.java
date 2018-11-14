@@ -57,6 +57,43 @@ public interface ExercisesPackage extends EPackage {
 	ExercisesPackage eINSTANCE = exercises.impl.ExercisesPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link exercises.impl.NamableElementImpl <em>Namable Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see exercises.impl.NamableElementImpl
+	 * @see exercises.impl.ExercisesPackageImpl#getNamableElement()
+	 * @generated
+	 */
+	int NAMABLE_ELEMENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMABLE_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Namable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMABLE_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Namable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMABLE_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link exercises.impl.DFAImpl <em>DFA</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,13 +104,22 @@ public interface ExercisesPackage extends EPackage {
 	int DFA = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DFA__NAME = NAMABLE_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DFA__STATES = 0;
+	int DFA__STATES = NAMABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Transition</b></em>' containment reference list.
@@ -82,7 +128,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFA__TRANSITION = 1;
+	int DFA__TRANSITION = NAMABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>DFA</em>' class.
@@ -91,7 +137,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFA_FEATURE_COUNT = 2;
+	int DFA_FEATURE_COUNT = NAMABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>DFA</em>' class.
@@ -100,7 +146,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DFA_OPERATION_COUNT = 0;
+	int DFA_OPERATION_COUNT = NAMABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link exercises.impl.StateImpl <em>State</em>}' class.
@@ -113,13 +159,22 @@ public interface ExercisesPackage extends EPackage {
 	int STATE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__NAME = NAMABLE_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__ID = 0;
+	int STATE__ID = NAMABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Start</b></em>' attribute.
@@ -128,7 +183,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_START = 1;
+	int STATE__IS_START = NAMABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -137,7 +192,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_END = 2;
+	int STATE__IS_END = NAMABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -146,7 +201,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__INCOMING = 3;
+	int STATE__INCOMING = NAMABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -155,7 +210,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__OUTGOING = 4;
+	int STATE__OUTGOING = NAMABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -164,7 +219,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 5;
+	int STATE_FEATURE_COUNT = NAMABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -173,7 +228,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_OPERATION_COUNT = 0;
+	int STATE_OPERATION_COUNT = NAMABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link exercises.impl.TransitionImpl <em>Transition</em>}' class.
@@ -186,13 +241,22 @@ public interface ExercisesPackage extends EPackage {
 	int TRANSITION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__NAME = NAMABLE_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__INPUT = 0;
+	int TRANSITION__INPUT = NAMABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -201,7 +265,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 1;
+	int TRANSITION_FEATURE_COUNT = NAMABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -210,7 +274,7 @@ public interface ExercisesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = 0;
+	int TRANSITION_OPERATION_COUNT = NAMABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link exercises.DFA <em>DFA</em>}'.
@@ -331,6 +395,27 @@ public interface ExercisesPackage extends EPackage {
 	EAttribute getTransition_Input();
 
 	/**
+	 * Returns the meta object for class '{@link exercises.NamableElement <em>Namable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Namable Element</em>'.
+	 * @see exercises.NamableElement
+	 * @generated
+	 */
+	EClass getNamableElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link exercises.NamableElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see exercises.NamableElement#getName()
+	 * @see #getNamableElement()
+	 * @generated
+	 */
+	EAttribute getNamableElement_Name();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -446,6 +531,24 @@ public interface ExercisesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION__INPUT = eINSTANCE.getTransition_Input();
+
+		/**
+		 * The meta object literal for the '{@link exercises.impl.NamableElementImpl <em>Namable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see exercises.impl.NamableElementImpl
+		 * @see exercises.impl.ExercisesPackageImpl#getNamableElement()
+		 * @generated
+		 */
+		EClass NAMABLE_ELEMENT = eINSTANCE.getNamableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMABLE_ELEMENT__NAME = eINSTANCE.getNamableElement_Name();
 
 	}
 

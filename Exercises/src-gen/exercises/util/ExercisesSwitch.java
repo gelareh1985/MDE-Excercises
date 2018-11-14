@@ -70,6 +70,8 @@ public class ExercisesSwitch<T> extends Switch<T> {
 			DFA dfa = (DFA) theEObject;
 			T result = caseDFA(dfa);
 			if (result == null)
+				result = caseNamableElement(dfa);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -77,12 +79,23 @@ public class ExercisesSwitch<T> extends Switch<T> {
 			State state = (State) theEObject;
 			T result = caseState(state);
 			if (result == null)
+				result = caseNamableElement(state);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case ExercisesPackage.TRANSITION: {
 			Transition transition = (Transition) theEObject;
 			T result = caseTransition(transition);
+			if (result == null)
+				result = caseNamableElement(transition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExercisesPackage.NAMABLE_ELEMENT: {
+			NamableElement namableElement = (NamableElement) theEObject;
+			T result = caseNamableElement(namableElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -134,6 +147,21 @@ public class ExercisesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTransition(Transition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Namable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Namable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamableElement(NamableElement object) {
 		return null;
 	}
 

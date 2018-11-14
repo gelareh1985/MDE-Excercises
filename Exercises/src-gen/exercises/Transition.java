@@ -2,8 +2,6 @@
  */
 package exercises;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Transition</b></em>'.
@@ -20,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Transition extends EObject {
+public interface Transition extends NamableElement {
 	/**
 	 * Returns the value of the '<em><b>Input</b></em>' attribute.
 	 * <!-- begin-user-doc -->

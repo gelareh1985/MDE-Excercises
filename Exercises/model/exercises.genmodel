@@ -23,5 +23,8 @@
     <genClasses ecoreClass="exercises.ecore#//Transition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercises.ecore#//Transition/input"/>
     </genClasses>
+    <genClasses ecoreClass="exercises.ecore#//NamableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercises.ecore#//NamableElement/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

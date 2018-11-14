@@ -3,7 +3,7 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:exercises="http://www.example.org/exercises"
-    name="dfa1dfa2dfa2">
+    name="">
   <states name="dfa1dfa2dfa2"
       id="A"
       isEnd="true"

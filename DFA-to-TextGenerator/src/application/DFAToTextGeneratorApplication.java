@@ -5,7 +5,10 @@ import java.util.Vector;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.equinox.app.IApplication;
@@ -56,12 +59,23 @@ public class DFAToTextGeneratorApplication implements IApplication{
 
 	private void genericEcoreTextGenerator(EObject element) {
 
+//		if (element instanceof State)  {
+//		if (element.eClass() == ExercisesPackage.eINSTANCE.getState()) {
+		if (element.eClass().getName().equals("State")) {
+			
+			
+		}
+		
 		System.out.println(" : " + element.eClass().getName());
 
 		for (EAttribute eat : element.eClass().getEAllAttributes()) {
+//			if(eat.getName()=="name")
 			System.out.println(eat.getName() + " = " + "\"" + element.eGet(eat) + "\"");
 		}
 
+		for (EReference eref : element.eClass().getEAllReferences()) {
+			System.out.println(eref.getName() + " = " + "\"" + element.eGet(eref) + "\"");
+		}
 	}
 
 	private void dfaSpecificTextGenerator(EObject element) {

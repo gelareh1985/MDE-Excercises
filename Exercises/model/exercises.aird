@@ -4,6 +4,7 @@
     <semanticResources>exercises.ecore</semanticResources>
     <semanticResources>exercises.genmodel</semanticResources>
     <semanticResources>../dynamicInstances/exampleUML.uml</semanticResources>
+    <semanticResources>../dynamicInstances/exampleUML2.uml</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_jd8iYONbEeiJIsIEzijujw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_jnkYcONbEeiJIsIEzijujw" name="exercises" repPath="#_jhe-kONbEeiJIsIEzijujw">

@@ -9,7 +9,8 @@
   <states name="dfa2"
       id="C"/>
   <states name="dfa3"
-      id="D"/>
+      id="D"
+      incoming="//@transition.0"/>
   <transition
       input="HelloWorld!"/>
 </exercises:DFA>

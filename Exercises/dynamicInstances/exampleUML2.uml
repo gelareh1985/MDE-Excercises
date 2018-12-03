@@ -2,9 +2,9 @@
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_C_PA0OZ7Eei5u8i_gtGdPA">
   <packagedElement xmi:type="uml:Class" xmi:id="_HiyrkOZ7Eei5u8i_gtGdPA" name="Hallo">
     <ownedAttribute xmi:id="_LimwEOZ7Eei5u8i_gtGdPA" name="world" type="_JoYfEOZ7Eei5u8i_gtGdPA"/>
-    <ownedAttribute xmi:id="_tGA_4OjtEeiPEafxzFOF9A" name="Only inA" type="_JoYfEOZ7Eei5u8i_gtGdPA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_JoYfEOZ7Eei5u8i_gtGdPA" name="World">
     <ownedAttribute xmi:id="_ORk3wOZ7Eei5u8i_gtGdPA" name="hello" type="_HiyrkOZ7Eei5u8i_gtGdPA"/>
+    <ownedAttribute xmi:id="_NVHaEOjtEeiPEafxzFOF9A" name="OnlyInB" type="_HiyrkOZ7Eei5u8i_gtGdPA"/>
   </packagedElement>
 </uml:Model>

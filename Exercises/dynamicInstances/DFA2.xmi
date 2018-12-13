@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:exercises="http://www.example.org/exercises"
     xsi:schemaLocation="http://www.example.org/exercises ../model/exercises.ecore"
-    name="">
+    name="Testdfa2dfa1dfa2dfa3">
   <states name="dfa2"
       id="C"/>
   <states name="dfa3"

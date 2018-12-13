@@ -3,8 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:exercises="http://www.example.org/exercises"
-    name="">
-  <states name="dfa1dfa2dfa2"
+    name="Testdfa2dfa1dfa2">
+  <states name="dfa2dfa2dfa2"
       id="A"
       isEnd="true"
       incoming="//@transition.0"/>

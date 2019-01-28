@@ -1,0 +1,51 @@
+import ecore : 'http://www.eclipse.org/emf/2002/Ecore#/'
+
+package ecore
+
+context EAttribute
+
+inv TheAttributeIsNotTransientSoItMustHaveADataTypeThatIsSerializable:
+
+self.transient and self.eType.oclIsTypeOf(EDataType) implies (self.eType.oclAsType(EDataType).serializable)
+
+context EClass
+
+inv AClassThatIsAnInterfaceMustAlsoBeAbstract:
+
+self.oclIsTypeOf(EClass) and self.interface implies (self.abstract)
+
+inv ThereMayNotBeTwoFeaturesNamed:
+
+self.oclIsTypeOf(EClass) 
+
+    and  
+
+    self.eStructuralFeatures->forAll(featureA| self.eStructuralFeatures->forAll(featureB|featureA<>featureB implies     (featureA.name<>featureB.name))) 
+
+    and 
+
+    self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassX |  
+
+    self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassY | 
+
+   eClassX<>eClassY implies 
+
+                              ( 
+
+                                  eClassX.eStructuralFeatures-> forAll(featureX |  
+
+                                  eClassY.eStructuralFeatures-> forAll(featureY |     
+
+                                  featureX.name<>featureY.name     
+
+                              )  
+
+                        ) 
+
+                ) 
+
+          ) 
+
+    ) 
+
+endpackage

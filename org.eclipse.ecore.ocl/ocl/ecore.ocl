@@ -5,47 +5,114 @@ package ecore
 context EAttribute
 
 inv TheAttributeIsNotTransientSoItMustHaveADataTypeThatIsSerializable:
-
 self.transient and self.eType.oclIsTypeOf(EDataType) implies (self.eType.oclAsType(EDataType).serializable)
+
+
 
 context EClass
 
 inv AClassThatIsAnInterfaceMustAlsoBeAbstract:
-
 self.oclIsTypeOf(EClass) and self.interface implies (self.abstract)
 
 inv ThereMayNotBeTwoFeaturesNamed:
-
 self.oclIsTypeOf(EClass) 
-
     and  
-
     self.eStructuralFeatures->forAll(featureA| self.eStructuralFeatures->forAll(featureB|featureA<>featureB implies     (featureA.name<>featureB.name))) 
-
     and 
-
     self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassX |  
-
     self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassY | 
-
-   eClassX<>eClassY implies 
-
+    eClassX<>eClassY implies 
                               ( 
-
                                   eClassX.eStructuralFeatures-> forAll(featureX |  
-
                                   eClassY.eStructuralFeatures-> forAll(featureY |     
-
                                   featureX.name<>featureY.name     
-
                               )  
-
                         ) 
-
                 ) 
-
           ) 
+    ) 
+    
+    
+
+context EReference
+
+inv AContainerReferenceMustHaveUpperBoundOfNot:
+self.container implies self.upperBound = 1 
+
+inv AContainmentOrBidirectionalReferenceMustBeUniqueIfItsUpperBoundIsDifferentFrom:
+self.oclIsTypeOf(EReference) implies self.containment or self.eOpposite<>null and self.upperBound<>1 implies self.unique 
+
+inv AContainmentReferenceOfATypeWithAContainerFeaturethatRequiresInstancesToBeContainedElsewhereCannotBePopulated:
+(self.oclIsTypeOf(EReference) and self.containment)  
+implies  
+(  
+
+  self.eType.oclIsTypeOf(EClass) 
+
+  implies( 
+
+    self.eType.oclAsType(EClass).eAllSuperTypes->append(self.eType.oclAsType(EClass))->forAll(typeClosure |  
+
+      typeClosure.oclAsType(EClass).eStructuralFeatures->forAll(f | 
+
+        f.oclIsTypeOf(EReference)  
+
+        implies 
+
+        ( 
+          f.oclAsType(EReference).eOpposite.containment 
+          implies 
+          (f.oclAsType(EReference).lowerBound = 0 or f.oclAsType(EReference).eOpposite = self)  
+        ) 
+
+      ) 
 
     ) 
+
+  ) 
+
+) 
+
+inv TheOppositeOfAContainmentReferenceMustNotBeAContainmentReference
+self.oclIsTypeOf(EReference) and (self.eOpposite<>null) 
+
+implies ( 
+
+     (self.containment=false) 
+
+     or 
+
+     (self.eOpposite.containment=false) 
+
+)
+
+
+
+context EStructuralFeature
+
+inv TheDefaultValueLiteralMustBeAValidLiteralOfTheAttributesType:
+(not(self.eType.oclIsTypeOf(EDataType)) implies self.defaultValueLiteral = null) 
+and 
+( 
+  self.eType.oclIsTypeOf(EEnum) 
+  implies  
+  ( 
+    not (self.defaultValueLiteral=null) 
+    implies  
+    ( 
+      self.eType.oclAsType(EEnum).eLiterals->forAll(literal | 
+        self.defaultValueLiteral=literal.toString() 
+      ) 
+    ) 
+  ) 
+) 
+and 
+not(self.eType.ePackage.eFactoryInstance.createFromString(self.eType.oclAsType(EDataType), self.defaultValueLiteral).oclIsInvalid()) 
+
+
+
+
+
+
 
 endpackage

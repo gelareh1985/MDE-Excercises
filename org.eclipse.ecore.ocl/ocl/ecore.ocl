@@ -37,7 +37,7 @@ self.oclIsTypeOf(EClass)
 context EReference
 
 inv AContainerReferenceMustHaveUpperBoundOfNot:
-self.container implies self.upperBound = 1 
+self.container implies (self.upperBound = 1)
 
 inv AContainmentOrBidirectionalReferenceMustBeUniqueIfItsUpperBoundIsDifferentFrom:
 self.oclIsTypeOf(EReference) implies self.containment or self.eOpposite<>null and self.upperBound<>1 implies self.unique 
@@ -73,7 +73,7 @@ implies
 
 ) 
 
-inv TheOppositeOfAContainmentReferenceMustNotBeAContainmentReference
+inv TheOppositeOfAContainmentReferenceMustNotBeAContainmentReference:
 self.oclIsTypeOf(EReference) and (self.eOpposite<>null) 
 
 implies ( 

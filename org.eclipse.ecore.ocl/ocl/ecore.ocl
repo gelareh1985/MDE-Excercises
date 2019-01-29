@@ -8,14 +8,17 @@ inv TheAttributeIsNotTransientSoItMustHaveADataTypeThatIsSerializable:
 self.transient and self.eType.oclIsTypeOf(EDataType) implies (self.eType.oclAsType(EDataType).serializable)
 
 inv TwoFeaturesCannotBothBeIDs: 
- self.oclIsTypeOf(EAttribute) and self.iD=true 
+self.oclIsTypeOf(EAttribute) and self.iD=true 
     implies 
     (  
     self.eContainingClass.eSuperTypes->forAll(typeClosure |typeClosure .eStructuralFeatures->forAll(feature| feature.oclAsType(EAttribute)<>self 
-    implies ( feature.oclAsType(EAttribute).iD<>true) 
-          ) 
-       )  
+      implies
+      ( 
+    	 feature.oclAsType(EAttribute).iD<>true   	
+      ) 
     ) 
+  )  
+) 
 
 
 
@@ -26,21 +29,27 @@ self.oclIsTypeOf(EClass) and self.interface implies (self.abstract)
 
 inv ThereMayNotBeTwoFeaturesNamed:
 self.oclIsTypeOf(EClass) 
-    and  
-    self.eStructuralFeatures->forAll(featureA| self.eStructuralFeatures->forAll(featureB|featureA<>featureB implies     (featureA.name<>featureB.name))) 
-    and 
-    self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassX |  
-    self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassY | 
-    eClassX<>eClassY implies 
-                              ( 
-                                  eClassX.eStructuralFeatures-> forAll(featureX |  
-                                  eClassY.eStructuralFeatures-> forAll(featureY |     
-                                  featureX.name<>featureY.name     
-                              )  
-                        ) 
-                ) 
-          ) 
+   and  
+   self.eStructuralFeatures->forAll(featureA| self.eStructuralFeatures->forAll(featureB|featureA<>featureB
+     implies
+   	 (
+   	    featureA.name<>featureB.name
+   	 )
+   )
+) 
+and 
+self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassX |  
+self.oclAsType(EClass).eAllSuperTypes->append(self.oclAsType(EClass))->forAll(eClassY | 
+eClassX<>eClassY implies 
+                 ( 
+                     eClassX.eStructuralFeatures-> forAll(featureX |  
+                     eClassY.eStructuralFeatures-> forAll(featureY |     
+                     featureX.name<>featureY.name     
+                 )  
+             ) 
+        ) 
     ) 
+) 
     
     
 
@@ -59,7 +68,7 @@ implies
   self.eType.oclIsTypeOf(EClass) 
   implies( 
     self.eType.oclAsType(EClass).eAllSuperTypes->append(self.eType.oclAsType(EClass))->forAll(typeClosure |  
-      typeClosure.oclAsType(EClass).eStructuralFeatures->forAll(f | 
+        typeClosure.oclAsType(EClass).eStructuralFeatures->forAll(f | 
         f.oclIsTypeOf(EReference)  
         implies 
         ( 
@@ -74,10 +83,11 @@ implies
 
 inv TheOppositeOfAContainmentReferenceMustNotBeAContainmentReference:
 self.oclIsTypeOf(EReference) and (self.eOpposite<>null) 
-implies ( 
-     (self.containment=false) 
-     or 
-     (self.eOpposite.containment=false) 
+implies
+( 
+   (self.containment=false) 
+   or 
+   (self.eOpposite.containment=false) 
 )
 
 inv TheOppositeOfATransientReferenceMustBeTransientIfItIsProxyResolving: 
@@ -90,10 +100,10 @@ implies
 ) 
 
 inv TheOppositeOfTheOppositeMayNotBeAReferenceDifferentFromThisOne: 
- self.oclIsTypeOf(EReference) and self.eOpposite<>null 
+self.oclIsTypeOf(EReference) and self.eOpposite<>null 
 implies 
 ( 
-     self.eOpposite.eOpposite=self 
+   self.eOpposite.eOpposite=self 
 ) 
 
 inv TheOppositeMayNotBeItsOwnOpposite: 
@@ -114,7 +124,7 @@ and
     implies  
     ( 
       self.eType.oclAsType(EEnum).eLiterals->forAll(literal | 
-        self.defaultValueLiteral=literal.toString() 
+      self.defaultValueLiteral=literal.toString() 
       ) 
     ) 
   ) 
@@ -135,18 +145,18 @@ not(
     exists(otherEOperation| 
       otherEOperation<>self  
       and 
-      self.name=otherEOperation.name 
+         self.name=otherEOperation.name 
       and 
-      self.eParameters->size() = otherEOperation.eParameters->size() 
+         self.eParameters->size() = otherEOperation.eParameters->size() 
       and 
       ( 
         (self.eParameters->isEmpty() and otherEOperation.eParameters->isEmpty()) 
         or 
-        self.eParameters->exists(eParameter | 
-          otherEOperation.eParameters->exists(otherEParameter | 
-            eParameter.eType=otherEParameter.eType 
-            and 
-            self.eParameters->indexOf(eParameter)=otherEOperation.eParameters->indexOf(otherEParameter) 
+           self.eParameters->exists(eParameter | 
+               otherEOperation.eParameters->exists(otherEParameter | 
+               eParameter.eType=otherEParameter.eType 
+           and 
+               self.eParameters->indexOf(eParameter)=otherEOperation.eParameters->indexOf(otherEParameter) 
           ) 
         ) 
       ) 
@@ -157,43 +167,43 @@ not(
 inv ThereMayNotBeAnOperationWithTheSameSignatureAsAnAccessorMethodForFeature: 
 self.oclIsTypeOf(EOperation) 
 and  
-self.eAnnotations->exists(annotation|annotation.source='http://www.eclipse.org/emf/2002/GenModel'  
+    self.eAnnotations->exists(annotation|annotation.source='http://www.eclipse.org/emf/2002/GenModel'  
 and 
-annotation.details-> exists(detail|detail.key='suppressedVisibility' 
+    annotation.details-> exists(detail|detail.key='suppressedVisibility' 
 and  
-detail.value='true' 
+    detail.value='true' 
   ) 
 ) 
 or     
 self.eContainingClass.oclAsType(EClass).eAllSuperTypes->append(self.eContainingClass.oclAsType(EClass))->forAll(typeClosure |  
     typeClosure.oclAsType(EClass).eStructuralFeatures->forAll(feature | 
     ( 
-           ( 
-             (self.eParameters->size() = 1 and feature.upperBound = 1 and self.eParameters->forAll(parameter | parameter.eType = feature.eType))  
-             implies (self.name <> 'set'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size()))) 
-           ) 
-      and 
-           (  
-             (self.eParameters->size()=0) 
-         implies (self.name <> 'get'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size()))) 
-           ) 
-      and 
-             ( 
-            (self.eParameters->size()=0) 
-            implies (self.name <> 'is'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size())))        
-           ) 
-      and 
-           ( 
-            (self.eParameters->size()=0) 
-            implies (self.name <> 'isSet'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size()))) 
-           ) 
-      and 
-           ( 
-            (self.eParameters->size()=0) 
-            implies (self.name <> 'unSet'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size())))     
-             ) 
+      ( 
+        (self.eParameters->size() = 1 and feature.upperBound = 1 and self.eParameters->forAll(parameter | parameter.eType = feature.eType))  
+         implies (self.name <> 'set'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size()))) 
         ) 
-    ) 
+    and 
+      (  
+        (self.eParameters->size()=0) 
+         implies (self.name <> 'get'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size()))) 
+        ) 
+    and 
+      ( 
+        (self.eParameters->size()=0) 
+         implies (self.name <> 'is'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size())))        
+        ) 
+    and 
+      ( 
+        (self.eParameters->size()=0) 
+         implies (self.name <> 'isSet'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size()))) 
+        ) 
+    and 
+      ( 
+        (self.eParameters->size()=0) 
+         implies (self.name <> 'unSet'.concat(feature.name.at(1).toUpperCase()).concat(feature.name.substring(2, feature.name.size())))     
+        ) 
+      ) 
+   ) 
 ) 
 
 
@@ -203,10 +213,10 @@ context EParameter
 inv ThereMayNotBeTwoParametersNamed: 
 self.oclIsKindOf(EParameter) and 
 (self.eOperation.eParameters)->forAll(otherEparameter| 
-    not 
-    ( 
-       otherEparameter<>self and otherEparameter.toString()=self.name 
-    ) 
+   not 
+   ( 
+      otherEparameter<>self and otherEparameter.toString()=self.name 
+   ) 
 ) 
 
 

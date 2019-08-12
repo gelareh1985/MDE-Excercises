@@ -18,19 +18,7 @@
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram xmi:id="_3-nB4KtnEeiat9mkRC-_BA" uid="_3-UG8KtnEeiat9mkRC-_BA">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_3-nB4atnEeiat9mkRC-_BA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_3-nB4qtnEeiat9mkRC-_BA">
-        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_pUztYCiOEemQ9boKBdYJ2A" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
-          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
-        </computedStyleDescriptions>
-        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_pU0UcCiOEemQ9boKBdYJ2A" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-        </computedStyleDescriptions>
-      </data>
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_3-nB4qtnEeiat9mkRC-_BA"/>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_3-nB5qtnEeiat9mkRC-_BA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_3-nB56tnEeiat9mkRC-_BA" type="Sirius" element="_3-nB4KtnEeiat9mkRC-_BA" measurementUnit="Pixel">
@@ -63,15 +51,19 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_3-nB6KtnEeiat9mkRC-_BA"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_4Rik8KtnEeiat9mkRC-_BA" name="Player" tooltipText="&#xA;ERROR : The attribute 'Player.volume' is not transient so it must have a data type that is serializable" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_4Rik8KtnEeiat9mkRC-_BA" name="Player" tooltipText="" width="12" height="10">
       <target xmi:type="ecore:EClass" href="example.ecore#//Player"/>
       <semanticElements xmi:type="ecore:EClass" href="example.ecore#//Player"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_pUztYSiOEemQ9boKBdYJ2A" labelColor="239,41,41" description="_pUztYCiOEemQ9boKBdYJ2A" borderSize="1" borderSizeComputationExpression="1" borderColor="239,41,41" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_0L_4AC-iEemo6p_FhIRzbQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5VeuMKtnEeiat9mkRC-_BA" name="volume : Integer" tooltipText="&#xA;ERROR : The attribute 'Player.volume' is not transient so it must have a data type that is serializable">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5VeuMKtnEeiat9mkRC-_BA" name="volume : Integer" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="example.ecore#//Player/volume"/>
         <semanticElements xmi:type="ecore:EAttribute" href="example.ecore#//Player/volume"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_pU0UcSiOEemQ9boKBdYJ2A" labelColor="239,41,41" labelAlignment="LEFT" description="_pU0UcCiOEemQ9boKBdYJ2A" borderColor="239,41,41"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_0MDiYC-iEemo6p_FhIRzbQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>

@@ -18,7 +18,14 @@
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram xmi:id="_3-nB4KtnEeiat9mkRC-_BA" uid="_3-UG8KtnEeiat9mkRC-_BA">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_3-nB4atnEeiat9mkRC-_BA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_3-nB4qtnEeiat9mkRC-_BA"/>
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_3-nB4qtnEeiat9mkRC-_BA">
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_5B8sgDBhEemo6p_FhIRzbQ" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+      </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_3-nB5qtnEeiat9mkRC-_BA" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_3-nB56tnEeiat9mkRC-_BA" type="Sirius" element="_3-nB4KtnEeiat9mkRC-_BA" measurementUnit="Pixel">
@@ -70,15 +77,13 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_FDAP0KtpEeiat9mkRC-_BA" name="MP3" tooltipText="" incomingEdges="_HFo18KtpEeiat9mkRC-_BA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_FDAP0KtpEeiat9mkRC-_BA" name="MP3" tooltipText="&#xA;ERROR : The opposite of a transient reference must be transient if it is proxy resolving" incomingEdges="_HFo18KtpEeiat9mkRC-_BA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="example.ecore#//MP3"/>
       <semanticElements xmi:type="ecore:EClass" href="example.ecore#//MP3"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_W4_p4Kt9Eeiat9mkRC-_BA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
-      </ownedStyle>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_5B96oDBhEemo6p_FhIRzbQ" labelColor="239,41,41" description="_5B8sgDBhEemo6p_FhIRzbQ" borderSize="1" borderSizeComputationExpression="1" borderColor="239,41,41" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_HFo18KtpEeiat9mkRC-_BA" sourceNode="_4Rik8KtnEeiat9mkRC-_BA" targetNode="_FDAP0KtpEeiat9mkRC-_BA" beginLabel="[1..1] player" endLabel="[0..*] mp3s">

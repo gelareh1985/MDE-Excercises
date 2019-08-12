@@ -158,6 +158,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_0tecgyiTEemQ9boKBdYJ2A" description="_0tecgCiTEemQ9boKBdYJ2A" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_0techCiTEemQ9boKBdYJ2A" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_0techSiTEemQ9boKBdYJ2A" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_5zQZEL0IEemaEa1IrETtdQ" type="Henshin" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_6WzLAL0IEemaEa1IrETtdQ" type="2001" fontName="Noto Sans" italic="true" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6W1AML0IEemaEa1IrETtdQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6W1AMb0IEemaEa1IrETtdQ" type="7001"/>
+    <element xmi:type="henshin:Rule" href="edit.rules.dfa.henshin#_6WrPML0IEemaEa1IrETtdQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6WzLAb0IEemaEa1IrETtdQ" x="70" y="39"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8Rwb0L0IEemaEa1IrETtdQ" type="2001" fontName="Noto Sans" italic="true" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8Rxp8L0IEemaEa1IrETtdQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_8Rxp8b0IEemaEa1IrETtdQ" type="7001"/>
+    <element xmi:type="henshin:Rule" href="edit.rules.dfa.henshin#_8RumoL0IEemaEa1IrETtdQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8Rwb0b0IEemaEa1IrETtdQ" x="70" y="460"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_5zQZEb0IEemaEa1IrETtdQ"/>
+  <element xmi:type="henshin:Module" href="edit.rules.dfa.henshin#_jpRVEL0GEemNHY7nyjewJg"/>
+</notation:Diagram>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_jpRVEL0GEemNHY7nyjewJg">
+  <imports href="../model/stateMachineEditRules.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_6WrPML0IEemaEa1IrETtdQ" name="initializeDFA">
+    <lhs xmi:id="_6W54sL0IEemaEa1IrETtdQ" name="Lhs"/>
+    <rhs xmi:id="_6W54sb0IEemaEa1IrETtdQ" name="Rhs"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_8RumoL0IEemaEa1IrETtdQ" name="createState">
+    <lhs xmi:id="_8R3wkL0IEemaEa1IrETtdQ" name="Lhs"/>
+    <rhs xmi:id="_8R4XoL0IEemaEa1IrETtdQ" name="Rhs"/>
+  </units>
+</henshin:Module>

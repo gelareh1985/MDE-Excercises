@@ -34,7 +34,7 @@ public interface State extends EObject {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see stateMachineEditRules.StateMachineEditRulesPackage#getState_Id()
-	 * @model transient="true"
+	 * @model
 	 * @generated
 	 */
 	String getId();
@@ -56,7 +56,7 @@ public interface State extends EObject {
 	 * @return the value of the '<em>Is Start</em>' attribute.
 	 * @see #setIsStart(boolean)
 	 * @see stateMachineEditRules.StateMachineEditRulesPackage#getState_IsStart()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsStart();
@@ -78,7 +78,7 @@ public interface State extends EObject {
 	 * @return the value of the '<em>Is End</em>' attribute.
 	 * @see #setIsEnd(boolean)
 	 * @see stateMachineEditRules.StateMachineEditRulesPackage#getState_IsEnd()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsEnd();

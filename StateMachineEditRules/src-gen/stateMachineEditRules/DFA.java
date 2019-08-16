@@ -20,7 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see stateMachineEditRules.StateMachineEditRulesPackage#getDFA()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='atLeastOneState exactlyOneStateMustHaveIsStartTrue atLeastOneFinalState transitionShouldNotBeLabeledNullOrEmpty'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot atLeastOneState='self.states-&gt;size() &gt; 0' exactlyOneStateMustHaveIsStartTrue='self.states-&gt;select(s|s.isStart)-&gt;size()=1' atLeastOneFinalState='self.states-&gt;select(s|s.isEnd)-&gt;size()&gt;0' transitionShouldNotBeLabeledNullOrEmpty='self.transitions-&gt;forAll(t|not t.input.oclIsUndefined() and t.input&lt;&gt;\'\')'"
  * @generated
  */
 public interface DFA extends EObject {

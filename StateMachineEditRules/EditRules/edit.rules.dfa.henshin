@@ -1,12 +1,844 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_jpRVEL0GEemNHY7nyjewJg">
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_jpRVEL0GEemNHY7nyjewJg">
   <imports href="../model/stateMachineEditRules.ecore#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_6WrPML0IEemaEa1IrETtdQ" name="initializeDFA">
-    <lhs xmi:id="_6W54sL0IEemaEa1IrETtdQ" name="Lhs"/>
-    <rhs xmi:id="_6W54sb0IEemaEa1IrETtdQ" name="Rhs"/>
+    <parameters xmi:id="_Vi_t8L22EemEYNYE03PcDg" name="par_id" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_6W54sL0IEemaEa1IrETtdQ" name="Lhs">
+      <nodes xmi:id="_i4W_EL0SEemFZZWgRRhU2Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <formula xsi:type="henshin:Not" xmi:id="_QQfyML25Eem7I7KAwIXGcw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_QQfyMb25Eem7I7KAwIXGcw">
+          <conclusion xmi:id="_QQfyMr25Eem7I7KAwIXGcw">
+            <nodes xmi:id="_QQfyM725Eem7I7KAwIXGcw" outgoing="_SkktoL25Eem7I7KAwIXGcw _S_H7oL25Eem7I7KAwIXGcw">
+              <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+            </nodes>
+            <nodes xmi:id="_QQdV8L25Eem7I7KAwIXGcw" incoming="_S_H7oL25Eem7I7KAwIXGcw">
+              <type href="../model/stateMachineEditRules.ecore#//State"/>
+            </nodes>
+            <nodes xmi:id="_Ra1eYL25Eem7I7KAwIXGcw" incoming="_SkktoL25Eem7I7KAwIXGcw">
+              <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+            </nodes>
+            <edges xmi:id="_SkktoL25Eem7I7KAwIXGcw" source="_QQfyM725Eem7I7KAwIXGcw" target="_Ra1eYL25Eem7I7KAwIXGcw">
+              <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+            </edges>
+            <edges xmi:id="_S_H7oL25Eem7I7KAwIXGcw" source="_QQfyM725Eem7I7KAwIXGcw" target="_QQdV8L25Eem7I7KAwIXGcw">
+              <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_QQfyNL25Eem7I7KAwIXGcw" origin="_i4W_EL0SEemFZZWgRRhU2Q" image="_QQfyM725Eem7I7KAwIXGcw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_6W54sb0IEemaEa1IrETtdQ" name="Rhs">
+      <nodes xmi:id="_HwK3QL22EemEYNYE03PcDg" incoming="_z3VosL0SEemFZZWgRRhU2Q">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_HwK3Qb22EemEYNYE03PcDg" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+        <attributes xmi:id="_HwK3Qr22EemEYNYE03PcDg" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+        <attributes xmi:id="_PhGc8L22EemEYNYE03PcDg" value="par_id">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HwQ94L22EemEYNYE03PcDg" outgoing="_z3VosL0SEemFZZWgRRhU2Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <edges xmi:id="_z3VosL0SEemFZZWgRRhU2Q" source="_HwQ94L22EemEYNYE03PcDg" target="_HwK3QL22EemEYNYE03PcDg">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_HwQ94b22EemEYNYE03PcDg" origin="_i4W_EL0SEemFZZWgRRhU2Q" image="_HwQ94L22EemEYNYE03PcDg"/>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_8RumoL0IEemaEa1IrETtdQ" name="createState">
-    <lhs xmi:id="_8R3wkL0IEemaEa1IrETtdQ" name="Lhs"/>
-    <rhs xmi:id="_8R4XoL0IEemaEa1IrETtdQ" name="Rhs"/>
+  <units xsi:type="henshin:Rule" xmi:id="_8RumoL0IEemaEa1IrETtdQ" name="setStartState">
+    <parameters xmi:id="_abfbAL3DEem7I7KAwIXGcw" name="newStart" kind="IN">
+      <type xsi:type="ecore:EClass" href="../model/stateMachineEditRules.ecore#//State"/>
+    </parameters>
+    <lhs xmi:id="_8R3wkL0IEemaEa1IrETtdQ" name="Lhs">
+      <nodes xmi:id="_rbbdAL26Eem7I7KAwIXGcw" outgoing="_t2350L28Eem7I7KAwIXGcw _sYXfAL29Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_uyaxgL27Eem7I7KAwIXGcw" incoming="_t2350L28Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_fL4sEL28Eem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_gjrI8L29Eem7I7KAwIXGcw" name="newStart" incoming="_sYXfAL29Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_qmIFUL29Eem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_t2350L28Eem7I7KAwIXGcw" source="_rbbdAL26Eem7I7KAwIXGcw" target="_uyaxgL27Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_sYXfAL29Eem7I7KAwIXGcw" source="_rbbdAL26Eem7I7KAwIXGcw" target="_gjrI8L29Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_8R4XoL0IEemaEa1IrETtdQ" name="Rhs">
+      <nodes xmi:id="_rbcEEL26Eem7I7KAwIXGcw" outgoing="_t2350b28Eem7I7KAwIXGcw _ix7W8L3CEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_uyaxgb27Eem7I7KAwIXGcw" incoming="_t2350b28Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_fL4sEb28Eem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ix6I0L3CEem7I7KAwIXGcw" name="newStart" incoming="_ix7W8L3CEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_ix6v4b3CEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_t2350b28Eem7I7KAwIXGcw" source="_rbcEEL26Eem7I7KAwIXGcw" target="_uyaxgb27Eem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_ix7W8L3CEem7I7KAwIXGcw" source="_rbcEEL26Eem7I7KAwIXGcw" target="_ix6I0L3CEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_rbcEEb26Eem7I7KAwIXGcw" origin="_rbbdAL26Eem7I7KAwIXGcw" image="_rbcEEL26Eem7I7KAwIXGcw"/>
+    <mappings xmi:id="_uyaxgr27Eem7I7KAwIXGcw" origin="_uyaxgL27Eem7I7KAwIXGcw" image="_uyaxgb27Eem7I7KAwIXGcw"/>
+    <mappings xmi:id="_ix6v4r3CEem7I7KAwIXGcw" origin="_gjrI8L29Eem7I7KAwIXGcw" image="_ix6I0L3CEem7I7KAwIXGcw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_3mmDQL3DEem7I7KAwIXGcw" name="createStartState">
+    <parameters xmi:id="_UeVqoL3EEem7I7KAwIXGcw" name="par_id" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_3mmDQb3DEem7I7KAwIXGcw" name="newStart" kind="IN">
+      <type xsi:type="ecore:EClass" href="../model/stateMachineEditRules.ecore#//State"/>
+    </parameters>
+    <lhs xmi:id="_3mmDQr3DEem7I7KAwIXGcw" name="Lhs">
+      <nodes xmi:id="_3mmDQ73DEem7I7KAwIXGcw" outgoing="_3mmDSL3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_3mmDRL3DEem7I7KAwIXGcw" incoming="_3mmDSL3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_3mmDRb3DEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_3mmDSL3DEem7I7KAwIXGcw" source="_3mmDQ73DEem7I7KAwIXGcw" target="_3mmDRL3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_3mmDSr3DEem7I7KAwIXGcw" name="Rhs">
+      <nodes xmi:id="_3mmDS73DEem7I7KAwIXGcw" outgoing="_3mmDUL3DEem7I7KAwIXGcw _3mmDSb3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_3mmDTL3DEem7I7KAwIXGcw" incoming="_3mmDUL3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_3mmDTb3DEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_3mmDRr3DEem7I7KAwIXGcw" name="" incoming="_3mmDSb3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_3mmDR73DEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+        <attributes xmi:id="_NUeE8L3EEem7I7KAwIXGcw" value="par_id">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_3mmDUL3DEem7I7KAwIXGcw" source="_3mmDS73DEem7I7KAwIXGcw" target="_3mmDTL3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_3mmDSb3DEem7I7KAwIXGcw" source="_3mmDS73DEem7I7KAwIXGcw" target="_3mmDRr3DEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_3mmDUr3DEem7I7KAwIXGcw" origin="_3mmDQ73DEem7I7KAwIXGcw" image="_3mmDS73DEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_3mmDU73DEem7I7KAwIXGcw" origin="_3mmDRL3DEem7I7KAwIXGcw" image="_3mmDTL3DEem7I7KAwIXGcw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_6wFR7r3FEem7I7KAwIXGcw" name="setEndState">
+    <parameters xmi:id="_BW7qAL3GEem7I7KAwIXGcw" name="newEnd" kind="IN">
+      <type xsi:type="ecore:EClass" href="../model/stateMachineEditRules.ecore#//State"/>
+    </parameters>
+    <lhs xmi:id="_6wFR8L3FEem7I7KAwIXGcw" name="Lhs">
+      <nodes xmi:id="_6wFR8b3FEem7I7KAwIXGcw" outgoing="_6wFR9r3FEem7I7KAwIXGcw _6wFR973FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_6wFR8r3FEem7I7KAwIXGcw" incoming="_6wFR9r3FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_6wFR873FEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_6wFR9L3FEem7I7KAwIXGcw" name="newEnd" incoming="_6wFR973FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_6wFR9b3FEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_6wFR9r3FEem7I7KAwIXGcw" source="_6wFR8b3FEem7I7KAwIXGcw" target="_6wFR8r3FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_6wFR973FEem7I7KAwIXGcw" source="_6wFR8b3FEem7I7KAwIXGcw" target="_6wFR9L3FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_6wFR-L3FEem7I7KAwIXGcw" name="Rhs">
+      <nodes xmi:id="_6wFR-b3FEem7I7KAwIXGcw" outgoing="_6wFR_r3FEem7I7KAwIXGcw _6wFR_73FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_6wFR-r3FEem7I7KAwIXGcw" incoming="_6wFR_r3FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_6wFR-73FEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_6wFR_L3FEem7I7KAwIXGcw" name="newEnd" incoming="_6wFR_73FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_6wFR_b3FEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_6wFR_r3FEem7I7KAwIXGcw" source="_6wFR-b3FEem7I7KAwIXGcw" target="_6wFR-r3FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_6wFR_73FEem7I7KAwIXGcw" source="_6wFR-b3FEem7I7KAwIXGcw" target="_6wFR_L3FEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_6wFSAL3FEem7I7KAwIXGcw" origin="_6wFR8b3FEem7I7KAwIXGcw" image="_6wFR-b3FEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_6wFSAb3FEem7I7KAwIXGcw" origin="_6wFR8r3FEem7I7KAwIXGcw" image="_6wFR-r3FEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_6wFSAr3FEem7I7KAwIXGcw" origin="_6wFR9L3FEem7I7KAwIXGcw" image="_6wFR_L3FEem7I7KAwIXGcw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_wJEagb3GEem7I7KAwIXGcw" name="createEndState">
+    <parameters xmi:id="_wJEagr3GEem7I7KAwIXGcw" name="par_id" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_2TQrwL3GEem7I7KAwIXGcw" name="newEnd" kind="IN">
+      <type xsi:type="ecore:EClass" href="../model/stateMachineEditRules.ecore#//State"/>
+    </parameters>
+    <lhs xmi:id="_wJEahL3GEem7I7KAwIXGcw" name="Lhs">
+      <nodes xmi:id="_wJEahb3GEem7I7KAwIXGcw" outgoing="_wJEaiL3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_wJEahr3GEem7I7KAwIXGcw" incoming="_wJEaiL3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_wJEah73GEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_wJEaiL3GEem7I7KAwIXGcw" source="_wJEahb3GEem7I7KAwIXGcw" target="_wJEahr3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_wJEaib3GEem7I7KAwIXGcw" name="Rhs">
+      <nodes xmi:id="_wJEair3GEem7I7KAwIXGcw" outgoing="_wJEakL3GEem7I7KAwIXGcw _wJEakb3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_wJEai73GEem7I7KAwIXGcw" incoming="_wJEakL3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_wJEajL3GEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_wJEajb3GEem7I7KAwIXGcw" name="" incoming="_wJEakb3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_wJEajr3GEem7I7KAwIXGcw" value="true">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+        <attributes xmi:id="_wJEaj73GEem7I7KAwIXGcw" value="par_id">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_wJEakL3GEem7I7KAwIXGcw" source="_wJEair3GEem7I7KAwIXGcw" target="_wJEai73GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_wJEakb3GEem7I7KAwIXGcw" source="_wJEair3GEem7I7KAwIXGcw" target="_wJEajb3GEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_wJEakr3GEem7I7KAwIXGcw" origin="_wJEahb3GEem7I7KAwIXGcw" image="_wJEair3GEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_wJEak73GEem7I7KAwIXGcw" origin="_wJEahr3GEem7I7KAwIXGcw" image="_wJEai73GEem7I7KAwIXGcw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_dx6AYL3HEem7I7KAwIXGcw" name="createNewState">
+    <parameters xmi:id="_wGHXkL3HEem7I7KAwIXGcw" name="par_id" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_dx6AYr3HEem7I7KAwIXGcw" name="Lhs">
+      <nodes xmi:id="_dx6AY73HEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_Mn8DML3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+      <nodes xmi:id="_NKGVEL3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_dx6Aar3HEem7I7KAwIXGcw" name="Rhs">
+      <nodes xmi:id="_dx6Aa73HEem7I7KAwIXGcw" outgoing="_dx6AaL3HEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_dx6AZL3HEem7I7KAwIXGcw" incoming="_dx6AaL3HEem7I7KAwIXGcw" outgoing="_UmiRcL3REemnzelIoUZ4lw _VEDT4L3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_dx6AZb3HEem7I7KAwIXGcw" value="par_id">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+        <attributes xmi:id="_p7hBEL3IEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+        <attributes xmi:id="_qW8Y0L3IEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_QLXtsL3REemnzelIoUZ4lw" incoming="_UmiRcL3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+      <nodes xmi:id="_RSz24L3REemnzelIoUZ4lw" incoming="_VEDT4L3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+      <edges xmi:id="_dx6AaL3HEem7I7KAwIXGcw" source="_dx6Aa73HEem7I7KAwIXGcw" target="_dx6AZL3HEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_UmiRcL3REemnzelIoUZ4lw" source="_dx6AZL3HEem7I7KAwIXGcw" target="_QLXtsL3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State/incomingTransitions"/>
+      </edges>
+      <edges xmi:id="_VEDT4L3REemnzelIoUZ4lw" source="_dx6AZL3HEem7I7KAwIXGcw" target="_RSz24L3REemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State/outgoingTransitions"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_dx6Acr3HEem7I7KAwIXGcw" origin="_dx6AY73HEem7I7KAwIXGcw" image="_dx6Aa73HEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_QLXtsb3REemnzelIoUZ4lw" origin="_Mn8DML3REemnzelIoUZ4lw" image="_QLXtsL3REemnzelIoUZ4lw"/>
+    <mappings xmi:id="_RSz24b3REemnzelIoUZ4lw" origin="_NKGVEL3REemnzelIoUZ4lw" image="_RSz24L3REemnzelIoUZ4lw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_Nf9mhr3IEem7I7KAwIXGcw" name="createNewTransition">
+    <parameters xmi:id="_XGCv4L3IEem7I7KAwIXGcw" name="par_input" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_Nf9miL3IEem7I7KAwIXGcw" name="Lhs">
+      <nodes xmi:id="_Nf9mib3IEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_nlrgML3KEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <nodes xmi:id="_epbMUL3JEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_Nf9mir3IEem7I7KAwIXGcw" name="Rhs">
+      <nodes xmi:id="_Nf9mi73IEem7I7KAwIXGcw" outgoing="_fDhj0L3IEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_Y1pFQL3IEem7I7KAwIXGcw" incoming="_fDhj0L3IEem7I7KAwIXGcw" outgoing="_fWW44L3LEem7I7KAwIXGcw _hB8Q8L3LEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_Z9gsQL3IEem7I7KAwIXGcw" value="par_input">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_r6lq8L3KEem7I7KAwIXGcw" incoming="_fWW44L3LEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <nodes xmi:id="_w1gFwL3KEem7I7KAwIXGcw" incoming="_hB8Q8L3LEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <edges xmi:id="_fDhj0L3IEem7I7KAwIXGcw" source="_Nf9mi73IEem7I7KAwIXGcw" target="_Y1pFQL3IEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_fWW44L3LEem7I7KAwIXGcw" source="_Y1pFQL3IEem7I7KAwIXGcw" target="_r6lq8L3KEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_hB8Q8L3LEem7I7KAwIXGcw" source="_Y1pFQL3IEem7I7KAwIXGcw" target="_w1gFwL3KEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Nf9mj73IEem7I7KAwIXGcw" origin="_Nf9mib3IEem7I7KAwIXGcw" image="_Nf9mi73IEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_r6lq8b3KEem7I7KAwIXGcw" origin="_nlrgML3KEem7I7KAwIXGcw" image="_r6lq8L3KEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_w1gFwb3KEem7I7KAwIXGcw" origin="_epbMUL3JEem7I7KAwIXGcw" image="_w1gFwL3KEem7I7KAwIXGcw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_8VP_Nr3NEem7I7KAwIXGcw" name="removeState">
+    <parameters xmi:id="_pL4sML3OEem7I7KAwIXGcw" name="par_id" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_OmVfAL3QEemnzelIoUZ4lw" name="start" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </parameters>
+    <parameters xmi:id="_OmWGEL3QEemnzelIoUZ4lw" name="end" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </parameters>
+    <lhs xmi:id="_8VP_OL3NEem7I7KAwIXGcw" name="Lhs">
+      <nodes xmi:id="_8VP_Ob3NEem7I7KAwIXGcw" outgoing="_Qw91cL3OEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_8VP_PL3NEem7I7KAwIXGcw" incoming="_Qw91cL3OEem7I7KAwIXGcw" outgoing="_tm50EL3QEemnzelIoUZ4lw _uQfjoL3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_8VP_Pb3NEem7I7KAwIXGcw" value="par_id">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+        <attributes xmi:id="_8VP_Pr3NEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isStart"/>
+        </attributes>
+        <attributes xmi:id="_8VP_P73NEem7I7KAwIXGcw" value="false">
+          <type href="../model/stateMachineEditRules.ecore#//State/isEnd"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_nTBbML3QEemnzelIoUZ4lw" incoming="_tm50EL3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+      <nodes xmi:id="_n0tzAL3QEemnzelIoUZ4lw" incoming="_uQfjoL3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+      <edges xmi:id="_Qw91cL3OEem7I7KAwIXGcw" source="_8VP_Ob3NEem7I7KAwIXGcw" target="_8VP_PL3NEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_tm50EL3QEemnzelIoUZ4lw" source="_8VP_PL3NEem7I7KAwIXGcw" target="_nTBbML3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State/incomingTransitions"/>
+      </edges>
+      <edges xmi:id="_uQfjoL3QEemnzelIoUZ4lw" source="_8VP_PL3NEem7I7KAwIXGcw" target="_n0tzAL3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State/outgoingTransitions"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_8VP_Or3NEem7I7KAwIXGcw" name="Rhs">
+      <nodes xmi:id="_8VP_O73NEem7I7KAwIXGcw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_q1KFML3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+      <nodes xmi:id="_rzGUIL3QEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_8VP_Qb3NEem7I7KAwIXGcw" origin="_8VP_Ob3NEem7I7KAwIXGcw" image="_8VP_O73NEem7I7KAwIXGcw"/>
+    <mappings xmi:id="_q1KFMb3QEemnzelIoUZ4lw" origin="_nTBbML3QEemnzelIoUZ4lw" image="_q1KFML3QEemnzelIoUZ4lw"/>
+    <mappings xmi:id="_rzGUIb3QEemnzelIoUZ4lw" origin="_n0tzAL3QEemnzelIoUZ4lw" image="_rzGUIL3QEemnzelIoUZ4lw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_FFeh4L3SEemnzelIoUZ4lw" name="removeTransition">
+    <parameters xmi:id="_znpuML3TEemnzelIoUZ4lw" name="par_input" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_FFeh5L3SEemnzelIoUZ4lw" name="Lhs">
+      <nodes xmi:id="_FFeh5b3SEemnzelIoUZ4lw" outgoing="_KkJa8L3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_FFeh6r3SEemnzelIoUZ4lw" incoming="_KkJa8L3bEemsTcwKm5uvWw" outgoing="_N2MagL3bEemsTcwKm5uvWw _PSSlEL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_BlcakL3bEemsTcwKm5uvWw" value="par_input">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FQ1uQL3bEemsTcwKm5uvWw" incoming="_N2MagL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <nodes xmi:id="_FvxtAL3bEemsTcwKm5uvWw" incoming="_PSSlEL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <edges xmi:id="_KkJa8L3bEemsTcwKm5uvWw" source="_FFeh5b3SEemnzelIoUZ4lw" target="_FFeh6r3SEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_N2MagL3bEemsTcwKm5uvWw" source="_FFeh6r3SEemnzelIoUZ4lw" target="_FQ1uQL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_PSSlEL3bEemsTcwKm5uvWw" source="_FFeh6r3SEemnzelIoUZ4lw" target="_FvxtAL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_FFeh773SEemnzelIoUZ4lw" name="Rhs">
+      <nodes xmi:id="_FFeh8L3SEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_Hgn_kL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <nodes xmi:id="_IlbEcL3bEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_FFeh873SEemnzelIoUZ4lw" origin="_FFeh5b3SEemnzelIoUZ4lw" image="_FFeh8L3SEemnzelIoUZ4lw"/>
+    <mappings xmi:id="_Hgn_kb3bEemsTcwKm5uvWw" origin="_FvxtAL3bEemsTcwKm5uvWw" image="_Hgn_kL3bEemsTcwKm5uvWw"/>
+    <mappings xmi:id="_IlbrgL3bEemsTcwKm5uvWw" origin="_FQ1uQL3bEemsTcwKm5uvWw" image="_IlbEcL3bEemsTcwKm5uvWw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_Jf-FVr3UEemnzelIoUZ4lw" name="changeTransitionTarget">
+    <parameters xmi:id="_MA--oL3WEemnzelIoUZ4lw" name="par_input" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_MA--ob3WEemnzelIoUZ4lw" name="old_target" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_MA--or3WEemnzelIoUZ4lw" name="new_target" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_Jf-FWb3UEemnzelIoUZ4lw" name="Lhs">
+      <nodes xmi:id="_Jf-FWr3UEemnzelIoUZ4lw" outgoing="_nlVg8L3VEemnzelIoUZ4lw _EkXxML3YEemnzelIoUZ4lw _IEPxYL3YEemnzelIoUZ4lw _QwoPYL9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_jwbhYL3UEemnzelIoUZ4lw" incoming="_nlVg8L3VEemnzelIoUZ4lw" outgoing="_JWlqYL3VEemnzelIoUZ4lw _L2FysL3VEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_OHdi8L3WEemnzelIoUZ4lw" value="par_input">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ue2y8L3UEemnzelIoUZ4lw" incoming="_JWlqYL3VEemnzelIoUZ4lw _IEPxYL3YEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <nodes xmi:id="_yAu-QL3UEemnzelIoUZ4lw" incoming="_EkXxML3YEemnzelIoUZ4lw _L2FysL3VEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_Z3iM0L3YEemnzelIoUZ4lw" value="old_target">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_BJUicL3fEemsTcwKm5uvWw" incoming="_QwoPYL9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_UK7LIL3fEemsTcwKm5uvWw" value="new_target">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_JWlqYL3VEemnzelIoUZ4lw" source="_jwbhYL3UEemnzelIoUZ4lw" target="_ue2y8L3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+      <edges xmi:id="_nlVg8L3VEemnzelIoUZ4lw" source="_Jf-FWr3UEemnzelIoUZ4lw" target="_jwbhYL3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_EkXxML3YEemnzelIoUZ4lw" source="_Jf-FWr3UEemnzelIoUZ4lw" target="_yAu-QL3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_IEPxYL3YEemnzelIoUZ4lw" source="_Jf-FWr3UEemnzelIoUZ4lw" target="_ue2y8L3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_L2FysL3VEemnzelIoUZ4lw" source="_jwbhYL3UEemnzelIoUZ4lw" target="_yAu-QL3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_QwoPYL9cEem7uI5bnrS0JA" source="_Jf-FWr3UEemnzelIoUZ4lw" target="_BJUicL3fEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_Jf-FXr3UEemnzelIoUZ4lw" name="Rhs">
+      <nodes xmi:id="_Jf-FX73UEemnzelIoUZ4lw" outgoing="_nlVg8b3VEemnzelIoUZ4lw _EkXxMb3YEemnzelIoUZ4lw _IEPxYb3YEemnzelIoUZ4lw _Qwo2cL9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_l01CEL3UEemnzelIoUZ4lw" incoming="_nlVg8b3VEemnzelIoUZ4lw" outgoing="_JWlqYb3VEemnzelIoUZ4lw _EI-xgL3fEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_OHeKAL3WEemnzelIoUZ4lw" value="par_input">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ue2y8b3UEemnzelIoUZ4lw" incoming="_JWlqYb3VEemnzelIoUZ4lw _IEPxYb3YEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+      </nodes>
+      <nodes xmi:id="_yAvlUL3UEemnzelIoUZ4lw" incoming="_EkXxMb3YEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_Z3iM0b3YEemnzelIoUZ4lw" value="old_target">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_BJUicb3fEemsTcwKm5uvWw" incoming="_EI-xgL3fEemsTcwKm5uvWw _Qwo2cL9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_UK7LIb3fEemsTcwKm5uvWw" value="new_target">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_JWlqYb3VEemnzelIoUZ4lw" source="_l01CEL3UEemnzelIoUZ4lw" target="_ue2y8b3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+      <edges xmi:id="_nlVg8b3VEemnzelIoUZ4lw" source="_Jf-FX73UEemnzelIoUZ4lw" target="_l01CEL3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_EkXxMb3YEemnzelIoUZ4lw" source="_Jf-FX73UEemnzelIoUZ4lw" target="_yAvlUL3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_IEPxYb3YEemnzelIoUZ4lw" source="_Jf-FX73UEemnzelIoUZ4lw" target="_ue2y8b3UEemnzelIoUZ4lw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_EI-xgL3fEemsTcwKm5uvWw" source="_l01CEL3UEemnzelIoUZ4lw" target="_BJUicb3fEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_Qwo2cL9cEem7uI5bnrS0JA" source="_Jf-FX73UEemnzelIoUZ4lw" target="_BJUicb3fEemsTcwKm5uvWw">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Jf-FZ73UEemnzelIoUZ4lw" origin="_Jf-FWr3UEemnzelIoUZ4lw" image="_Jf-FX73UEemnzelIoUZ4lw"/>
+    <mappings xmi:id="_l01pIL3UEemnzelIoUZ4lw" origin="_jwbhYL3UEemnzelIoUZ4lw" image="_l01CEL3UEemnzelIoUZ4lw"/>
+    <mappings xmi:id="_ue2y8r3UEemnzelIoUZ4lw" origin="_ue2y8L3UEemnzelIoUZ4lw" image="_ue2y8b3UEemnzelIoUZ4lw"/>
+    <mappings xmi:id="_yAvlUb3UEemnzelIoUZ4lw" origin="_yAu-QL3UEemnzelIoUZ4lw" image="_yAvlUL3UEemnzelIoUZ4lw"/>
+    <mappings xmi:id="_BJUicr3fEemsTcwKm5uvWw" origin="_BJUicL3fEemsTcwKm5uvWw" image="_BJUicb3fEemsTcwKm5uvWw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_Isz8AL8yEemMXcjgo2nT_Q" name="changeTransitionSource">
+    <parameters xmi:id="_Isz8Ab8yEemMXcjgo2nT_Q" name="par_input" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_8FYIIL82Eem7uI5bnrS0JA" name="old_source" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_xqoH4b8zEemMXcjgo2nT_Q" name="new_source" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_GTyAYL84Eem7uI5bnrS0JA" name="targetId" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_Isz8BL8yEemMXcjgo2nT_Q" name="Lhs">
+      <nodes xmi:id="_Isz8Bb8yEemMXcjgo2nT_Q" outgoing="_Isz8Dr8yEemMXcjgo2nT_Q _Isz8D78yEemMXcjgo2nT_Q _Isz8EL8yEemMXcjgo2nT_Q _bFTkML9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_Isz8Br8yEemMXcjgo2nT_Q" incoming="_Isz8Dr8yEemMXcjgo2nT_Q" outgoing="_Isz8Db8yEemMXcjgo2nT_Q _Isz8Eb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_Isz8B78yEemMXcjgo2nT_Q" value="par_input">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Isz8CL8yEemMXcjgo2nT_Q" incoming="_Isz8Db8yEemMXcjgo2nT_Q _Isz8EL8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_jRhXgL83Eem7uI5bnrS0JA" value="targetId">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Isz8Cb8yEemMXcjgo2nT_Q" incoming="_Isz8D78yEemMXcjgo2nT_Q _Isz8Eb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_Isz8Cr8yEemMXcjgo2nT_Q" value="old_source">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Isz8C78yEemMXcjgo2nT_Q" incoming="_bFTkML9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_Isz8DL8yEemMXcjgo2nT_Q" value="new_source">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_Isz8Db8yEemMXcjgo2nT_Q" source="_Isz8Br8yEemMXcjgo2nT_Q" target="_Isz8CL8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_Isz8Dr8yEemMXcjgo2nT_Q" source="_Isz8Bb8yEemMXcjgo2nT_Q" target="_Isz8Br8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_Isz8D78yEemMXcjgo2nT_Q" source="_Isz8Bb8yEemMXcjgo2nT_Q" target="_Isz8Cb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_Isz8EL8yEemMXcjgo2nT_Q" source="_Isz8Bb8yEemMXcjgo2nT_Q" target="_Isz8CL8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_Isz8Eb8yEemMXcjgo2nT_Q" source="_Isz8Br8yEemMXcjgo2nT_Q" target="_Isz8Cb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+      <edges xmi:id="_bFTkML9cEem7uI5bnrS0JA" source="_Isz8Bb8yEemMXcjgo2nT_Q" target="_Isz8C78yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_Isz8Er8yEemMXcjgo2nT_Q" name="Rhs">
+      <nodes xmi:id="_Isz8E78yEemMXcjgo2nT_Q" outgoing="_Isz8HL8yEemMXcjgo2nT_Q _Isz8Hb8yEemMXcjgo2nT_Q _Isz8Hr8yEemMXcjgo2nT_Q _bFTkMb9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_Isz8FL8yEemMXcjgo2nT_Q" incoming="_Isz8HL8yEemMXcjgo2nT_Q" outgoing="_Isz8G78yEemMXcjgo2nT_Q _Isz8H78yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_Isz8Fb8yEemMXcjgo2nT_Q" value="par_input">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Isz8Fr8yEemMXcjgo2nT_Q" incoming="_Isz8G78yEemMXcjgo2nT_Q _Isz8Hr8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_jRka0L83Eem7uI5bnrS0JA" value="targetId">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Isz8F78yEemMXcjgo2nT_Q" incoming="_Isz8Hb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_Isz8GL8yEemMXcjgo2nT_Q" value="old_source">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Isz8Gb8yEemMXcjgo2nT_Q" incoming="_Isz8H78yEemMXcjgo2nT_Q _bFTkMb9cEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_Isz8Gr8yEemMXcjgo2nT_Q" value="new_source">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_Isz8G78yEemMXcjgo2nT_Q" source="_Isz8FL8yEemMXcjgo2nT_Q" target="_Isz8Fr8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_Isz8HL8yEemMXcjgo2nT_Q" source="_Isz8E78yEemMXcjgo2nT_Q" target="_Isz8FL8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_Isz8Hb8yEemMXcjgo2nT_Q" source="_Isz8E78yEemMXcjgo2nT_Q" target="_Isz8F78yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_Isz8Hr8yEemMXcjgo2nT_Q" source="_Isz8E78yEemMXcjgo2nT_Q" target="_Isz8Fr8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_Isz8H78yEemMXcjgo2nT_Q" source="_Isz8FL8yEemMXcjgo2nT_Q" target="_Isz8Gb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+      <edges xmi:id="_bFTkMb9cEem7uI5bnrS0JA" source="_Isz8E78yEemMXcjgo2nT_Q" target="_Isz8Gb8yEemMXcjgo2nT_Q">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Isz8IL8yEemMXcjgo2nT_Q" origin="_Isz8Bb8yEemMXcjgo2nT_Q" image="_Isz8E78yEemMXcjgo2nT_Q"/>
+    <mappings xmi:id="_Isz8Ib8yEemMXcjgo2nT_Q" origin="_Isz8Br8yEemMXcjgo2nT_Q" image="_Isz8FL8yEemMXcjgo2nT_Q"/>
+    <mappings xmi:id="_Isz8Ir8yEemMXcjgo2nT_Q" origin="_Isz8CL8yEemMXcjgo2nT_Q" image="_Isz8Fr8yEemMXcjgo2nT_Q"/>
+    <mappings xmi:id="_Isz8I78yEemMXcjgo2nT_Q" origin="_Isz8Cb8yEemMXcjgo2nT_Q" image="_Isz8F78yEemMXcjgo2nT_Q"/>
+    <mappings xmi:id="_Isz8JL8yEemMXcjgo2nT_Q" origin="_Isz8C78yEemMXcjgo2nT_Q" image="_Isz8Gb8yEemMXcjgo2nT_Q"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_VvDe8L9hEem7uI5bnrS0JA" name="setTransitionLabel">
+    <parameters xmi:id="_SpWc0L9iEem7uI5bnrS0JA" name="par_label" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_R2-DwMAJEemNUtKRNYOJ1Q" name="st1" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_R2-q0MAJEemNUtKRNYOJ1Q" name="st2" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_0-3TMMAMEemNUtKRNYOJ1Q" name="new_label" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_VvI-gL9hEem7uI5bnrS0JA" name="Lhs">
+      <nodes xmi:id="_of2rgL9hEem7uI5bnrS0JA" outgoing="_ryzqAL9hEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_pZOjgL9hEem7uI5bnrS0JA" incoming="_ryzqAL9hEem7uI5bnrS0JA" outgoing="_hDHXsL9iEem7uI5bnrS0JA _mJolkL9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_KqRGYL9iEem7uI5bnrS0JA" value="par_label">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_XPaB8L9iEem7uI5bnrS0JA" incoming="_hDHXsL9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_WiCEsMAJEemNUtKRNYOJ1Q" value="st1">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_XrIUoL9iEem7uI5bnrS0JA" incoming="_mJolkL9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_a03L0MAJEemNUtKRNYOJ1Q" value="st2">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_ryzqAL9hEem7uI5bnrS0JA" source="_of2rgL9hEem7uI5bnrS0JA" target="_pZOjgL9hEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_hDHXsL9iEem7uI5bnrS0JA" source="_pZOjgL9hEem7uI5bnrS0JA" target="_XPaB8L9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_mJolkL9iEem7uI5bnrS0JA" source="_pZOjgL9hEem7uI5bnrS0JA" target="_XrIUoL9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_VvI-gb9hEem7uI5bnrS0JA" name="Rhs">
+      <nodes xmi:id="_of2rgb9hEem7uI5bnrS0JA" outgoing="_ry0REL9hEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_pZOjgb9hEem7uI5bnrS0JA" incoming="_ry0REL9hEem7uI5bnrS0JA" outgoing="_hDH-wL9iEem7uI5bnrS0JA _mJolkb9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_KqRGYb9iEem7uI5bnrS0JA" value="new_label">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_XPapAL9iEem7uI5bnrS0JA" incoming="_hDH-wL9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_WiG9MMAJEemNUtKRNYOJ1Q" value="st1">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_XrIUob9iEem7uI5bnrS0JA" incoming="_mJolkb9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_a03L0cAJEemNUtKRNYOJ1Q" value="st2">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_ry0REL9hEem7uI5bnrS0JA" source="_of2rgb9hEem7uI5bnrS0JA" target="_pZOjgb9hEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/transitions"/>
+      </edges>
+      <edges xmi:id="_hDH-wL9iEem7uI5bnrS0JA" source="_pZOjgb9hEem7uI5bnrS0JA" target="_XPapAL9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/to"/>
+      </edges>
+      <edges xmi:id="_mJolkb9iEem7uI5bnrS0JA" source="_pZOjgb9hEem7uI5bnrS0JA" target="_XrIUob9iEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition/from"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_of2rgr9hEem7uI5bnrS0JA" origin="_of2rgL9hEem7uI5bnrS0JA" image="_of2rgb9hEem7uI5bnrS0JA"/>
+    <mappings xmi:id="_pZOjgr9hEem7uI5bnrS0JA" origin="_pZOjgL9hEem7uI5bnrS0JA" image="_pZOjgb9hEem7uI5bnrS0JA"/>
+    <mappings xmi:id="_XPapAb9iEem7uI5bnrS0JA" origin="_XPaB8L9iEem7uI5bnrS0JA" image="_XPapAL9iEem7uI5bnrS0JA"/>
+    <mappings xmi:id="_XrIUor9iEem7uI5bnrS0JA" origin="_XrIUoL9iEem7uI5bnrS0JA" image="_XrIUob9iEem7uI5bnrS0JA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_MqZVoL9jEem7uI5bnrS0JA" name="setStateLabel">
+    <parameters xmi:id="_MqZVob9jEem7uI5bnrS0JA" name="par_label" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_oePLkMAJEemNUtKRNYOJ1Q" name="tr1" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_oePLkcAJEemNUtKRNYOJ1Q" name="tr2" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_hOiG0MANEemNUtKRNYOJ1Q" name="new_label" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_MqZVor9jEem7uI5bnrS0JA" name="Lhs">
+      <nodes xmi:id="_MqZVo79jEem7uI5bnrS0JA" outgoing="_k0jzkL9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_MqZVpr9jEem7uI5bnrS0JA" incoming="_k0jzkL9jEem7uI5bnrS0JA" outgoing="_mpAMsL9jEem7uI5bnrS0JA _nDkBwL9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_ew8EQL9jEem7uI5bnrS0JA" value="par_label">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_g-KJwL9jEem7uI5bnrS0JA" incoming="_mpAMsL9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_h4MEoMAJEemNUtKRNYOJ1Q" value="tr1">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ivEtwL9jEem7uI5bnrS0JA" incoming="_nDkBwL9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_pK1y4MAJEemNUtKRNYOJ1Q" value="tr2">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_k0jzkL9jEem7uI5bnrS0JA" source="_MqZVo79jEem7uI5bnrS0JA" target="_MqZVpr9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_mpAMsL9jEem7uI5bnrS0JA" source="_MqZVpr9jEem7uI5bnrS0JA" target="_g-KJwL9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State/incomingTransitions"/>
+      </edges>
+      <edges xmi:id="_nDkBwL9jEem7uI5bnrS0JA" source="_MqZVpr9jEem7uI5bnrS0JA" target="_ivEtwL9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State/outgoingTransitions"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_MqZVq79jEem7uI5bnrS0JA" name="Rhs">
+      <nodes xmi:id="_MqZVrL9jEem7uI5bnrS0JA" outgoing="_k0jzkb9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA"/>
+      </nodes>
+      <nodes xmi:id="_MqZVr79jEem7uI5bnrS0JA" incoming="_k0jzkb9jEem7uI5bnrS0JA" outgoing="_mpAMsb9jEem7uI5bnrS0JA _nDkBwb9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State"/>
+        <attributes xmi:id="_ew8rUL9jEem7uI5bnrS0JA" value="new_label">
+          <type href="../model/stateMachineEditRules.ecore#//State/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_g-Kw0L9jEem7uI5bnrS0JA" incoming="_mpAMsb9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_h4MEocAJEemNUtKRNYOJ1Q" value="tr1">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ivEtwb9jEem7uI5bnrS0JA" incoming="_nDkBwb9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//Transition"/>
+        <attributes xmi:id="_pK2Z8MAJEemNUtKRNYOJ1Q" value="tr2">
+          <type href="../model/stateMachineEditRules.ecore#//Transition/input"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_k0jzkb9jEem7uI5bnrS0JA" source="_MqZVrL9jEem7uI5bnrS0JA" target="_MqZVr79jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//DFA/states"/>
+      </edges>
+      <edges xmi:id="_mpAMsb9jEem7uI5bnrS0JA" source="_MqZVr79jEem7uI5bnrS0JA" target="_g-Kw0L9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State/incomingTransitions"/>
+      </edges>
+      <edges xmi:id="_nDkBwb9jEem7uI5bnrS0JA" source="_MqZVr79jEem7uI5bnrS0JA" target="_ivEtwb9jEem7uI5bnrS0JA">
+        <type href="../model/stateMachineEditRules.ecore#//State/outgoingTransitions"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_MqZVtL9jEem7uI5bnrS0JA" origin="_MqZVo79jEem7uI5bnrS0JA" image="_MqZVrL9jEem7uI5bnrS0JA"/>
+    <mappings xmi:id="_MqZVtr9jEem7uI5bnrS0JA" origin="_MqZVpr9jEem7uI5bnrS0JA" image="_MqZVr79jEem7uI5bnrS0JA"/>
+    <mappings xmi:id="_g-Kw0b9jEem7uI5bnrS0JA" origin="_g-KJwL9jEem7uI5bnrS0JA" image="_g-Kw0L9jEem7uI5bnrS0JA"/>
+    <mappings xmi:id="_ivFU0L9jEem7uI5bnrS0JA" origin="_ivEtwL9jEem7uI5bnrS0JA" image="_ivEtwb9jEem7uI5bnrS0JA"/>
   </units>
 </henshin:Module>

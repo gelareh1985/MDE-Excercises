@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stateMachineEditRules="http://www.example.org/stateMachineEditRules" xsi:schemaLocation="http://www.example.org/stateMachineEditRules stateMachineEditRules.ecore">
+  <stateMachineEditRules:DFA>
+    <transitions/>
+  </stateMachineEditRules:DFA>
+  <stateMachineEditRules:DFA>
+    <states isStart="true" isEnd="true"/>
+  </stateMachineEditRules:DFA>
+</xmi:XMI>

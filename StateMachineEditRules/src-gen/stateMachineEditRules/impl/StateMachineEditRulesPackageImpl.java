@@ -7,12 +7,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import stateMachineEditRules.State;
 import stateMachineEditRules.StateMachineEditRulesFactory;
 import stateMachineEditRules.StateMachineEditRulesPackage;
 import stateMachineEditRules.Transition;
+import stateMachineEditRules.util.StateMachineEditRulesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,6 +100,14 @@ public class StateMachineEditRulesPackageImpl extends EPackageImpl implements St
 
 		// Initialize created meta-data
 		theStateMachineEditRulesPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put(theStateMachineEditRulesPackage, new EValidator.Descriptor() {
+			@Override
+			public EValidator getEValidator() {
+				return StateMachineEditRulesValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		theStateMachineEditRulesPackage.freeze();
@@ -327,11 +337,11 @@ public class StateMachineEditRulesPackageImpl extends EPackageImpl implements St
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getState_Id(), ecorePackage.getEString(), "id", null, 0, 1, State.class, IS_TRANSIENT,
+		initEAttribute(getState_Id(), ecorePackage.getEString(), "id", null, 0, 1, State.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_IsStart(), ecorePackage.getEBoolean(), "isStart", null, 0, 1, State.class,
+		initEAttribute(getState_IsStart(), ecorePackage.getEBoolean(), "isStart", null, 1, 1, State.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_IsEnd(), ecorePackage.getEBoolean(), "isEnd", null, 0, 1, State.class, !IS_TRANSIENT,
+		initEAttribute(getState_IsEnd(), ecorePackage.getEBoolean(), "isEnd", null, 1, 1, State.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_IncomingTransitions(), this.getTransition(), this.getTransition_To(),
 				"incomingTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
@@ -351,6 +361,43 @@ public class StateMachineEditRulesPackageImpl extends EPackageImpl implements St
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(this, source,
+				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "validationDelegates",
+						"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" });
+		addAnnotation(dfaEClass, source, new String[] { "constraints",
+				"atLeastOneState exactlyOneStateMustHaveIsStartTrue atLeastOneFinalState transitionShouldNotBeLabeledNullOrEmpty" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation(dfaEClass, source,
+				new String[] { "atLeastOneState", "self.states->size() > 0", "exactlyOneStateMustHaveIsStartTrue",
+						"self.states->select(s|s.isStart)->size()=1", "atLeastOneFinalState",
+						"self.states->select(s|s.isEnd)->size()>0", "transitionShouldNotBeLabeledNullOrEmpty",
+						"self.transitions->forAll(t|not t.input.oclIsUndefined() and t.input<>\'\')" });
 	}
 
 } //StateMachineEditRulesPackageImpl

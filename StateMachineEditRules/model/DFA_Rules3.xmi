@@ -5,13 +5,17 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:stateMachineEditRules="http://www.example.org/stateMachineEditRules"
     xsi:schemaLocation="http://www.example.org/stateMachineEditRules stateMachineEditRules.ecore">
-  <states isStart="true"
+  <states id="1"
+      isStart="true"
       outgoingTransitions="//@transitions.0 //@transitions.2"/>
-  <states incomingTransitions="//@transitions.0"
+  <states id="2"
+      incomingTransitions="//@transitions.0"
       outgoingTransitions="//@transitions.1"/>
-  <states incomingTransitions="//@transitions.2"
+  <states id="3"
+      incomingTransitions="//@transitions.2"
       outgoingTransitions="//@transitions.3"/>
-  <states isEnd="true"
+  <states id="4"
+      isEnd="true"
       incomingTransitions="//@transitions.1 //@transitions.3"/>
   <transitions
       input="1"

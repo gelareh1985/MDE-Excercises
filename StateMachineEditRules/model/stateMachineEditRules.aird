@@ -9,6 +9,8 @@
     <semanticResources>../EditRules/InitializeDFA.henshin</semanticResources>
     <semanticResources>../EditRules/InitializeDFA.henshin_diagram</semanticResources>
     <semanticResources>DFA_Rules2.xmi</semanticResources>
+    <semanticResources>DFA_Rules3.xmi</semanticResources>
+    <semanticResources>DFA_Rules3_transformed.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_STJyELzrEemNHY7nyjewJg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_SX1dwLzrEemNHY7nyjewJg" name="stateMachineEditRules" repPath="#_SVvzELzrEemNHY7nyjewJg">

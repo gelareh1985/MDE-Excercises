@@ -11,6 +11,9 @@
     <semanticResources>DFA_Rules2.xmi</semanticResources>
     <semanticResources>DFA_Rules3.xmi</semanticResources>
     <semanticResources>DFA_Rules3_transformed.xmi</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>../EditRules/edit.rules.dfa.henshin</semanticResources>
+    <semanticResources>http://www.example.org/stateMachineEditRules</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_STJyELzrEemNHY7nyjewJg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_SX1dwLzrEemNHY7nyjewJg" name="stateMachineEditRules" repPath="#_SVvzELzrEemNHY7nyjewJg">

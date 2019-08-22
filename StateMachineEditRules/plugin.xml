@@ -13,5 +13,17 @@
             class="stateMachineEditRules.StateMachineEditRulesPackage"
             genModel="model/stateMachineEditRules.genmodel"/>
    </extension>
+   <extension
+         id="executor"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="stateMachineEditRules.ApplicationExecutor">
+         </run>
+      </application>
+   </extension>
 
 </plugin>

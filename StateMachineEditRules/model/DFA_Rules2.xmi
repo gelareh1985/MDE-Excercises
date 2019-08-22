@@ -4,6 +4,4 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:stateMachineEditRules="http://www.example.org/stateMachineEditRules"
-    xsi:schemaLocation="http://www.example.org/stateMachineEditRules stateMachineEditRules.ecore">
-  <transitions/>
-</stateMachineEditRules:DFA>
+    xsi:schemaLocation="http://www.example.org/stateMachineEditRules stateMachineEditRules.ecore"/>

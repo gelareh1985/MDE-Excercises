@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stateMachineEditRules:DFA xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:stateMachineEditRules="http://www.example.org/stateMachineEditRules">
+  <states id="1" outgoingTransitions="//@transitions.0 //@transitions.2"/>
+  <states id="2" isStart="true" incomingTransitions="//@transitions.0" outgoingTransitions="//@transitions.1"/>
+  <states id="3" incomingTransitions="//@transitions.2" outgoingTransitions="//@transitions.3"/>
+  <states id="4" isEnd="true" incomingTransitions="//@transitions.1 //@transitions.3"/>
+  <transitions input="1" to="//@states.1" from="//@states.0"/>
+  <transitions input="2" to="//@states.3" from="//@states.1"/>
+  <transitions input="2" to="//@states.2" from="//@states.0"/>
+  <transitions input="1" to="//@states.3" from="//@states.2"/>
+</stateMachineEditRules:DFA>
